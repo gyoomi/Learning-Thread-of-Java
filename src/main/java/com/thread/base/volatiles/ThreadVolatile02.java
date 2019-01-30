@@ -13,7 +13,7 @@ package com.thread.base.volatiles;
  *
  * 3. volatile和synchronized
  *    1)volatile保证了变量的可见性但是并不保证线程的原子性；synchronized保证了原子性，同时也间接地保证了可见性。因为他会将私有内存和公有内存中的变量做同步。
- *    2）
+ *    2）多线程访问volatile不会阻塞，而多线程访问synchronized则会阻塞
  *
  * @author Leon
  * @version 2019/1/30 16:37
