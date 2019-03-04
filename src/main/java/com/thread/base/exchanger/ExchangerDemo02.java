@@ -35,8 +35,8 @@ public class ExchangerDemo02 {
             public void run() {
                 try {
                     String B = "银行流水B";
-                    String A = exchanger.exchange("B");
-                    System.out.println("A和B的数据是否一致：" + A.equals(B) + "A 录入的是：" + A + " B录入的是：" + B);
+                    String A = exchanger.exchange(B);
+                    System.out.println("A和B的数据是否一致：" + A.equals(B) + "A录入的是：" + A + "   B录入的是：" + B);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
