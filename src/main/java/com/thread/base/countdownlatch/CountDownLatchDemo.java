@@ -14,12 +14,17 @@ public class CountDownLatchDemo {
 
     public static void main(String[] args) throws Exception {
         Runnable r = () -> {
-            System.out.println("1 step...");
-            cdl.countDown();
-            System.out.println("2 step...");
-            cdl.countDown();
-            System.out.println("3 step...");
-            cdl.countDown();
+            try {
+                System.out.println("1 step...");
+                cdl.countDown();
+                System.out.println("2 step...");
+                cdl.countDown();
+                Thread.sleep(2000);
+                System.out.println("3 step...");
+                cdl.countDown();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         };
         new Thread(r).start();
         cdl.await();
